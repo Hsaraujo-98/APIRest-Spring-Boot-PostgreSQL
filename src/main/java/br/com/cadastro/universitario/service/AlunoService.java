@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import br.com.cadastro.universitario.domain.Aluno;
 import br.com.cadastro.universitario.dtos.commands.AlunoInsertCommand;
-import br.com.cadastro.universitario.dtos.models.AlunoListModel;
 import br.com.cadastro.universitario.repositories.AlunoRepository;
 
 @Service
@@ -23,7 +22,7 @@ public class AlunoService {
 		return alunoRepository.save(aluno);
 	}
 
-	public List<Aluno> listar(AlunoListModel model) {
+	public List<Aluno> listar() {
 
 		return alunoRepository.findAll();
 	}
@@ -39,4 +38,5 @@ public class AlunoService {
 
 		alunoRepository.delete(aluno);
 	}
+
 }

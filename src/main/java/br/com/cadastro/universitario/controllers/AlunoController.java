@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.cadastro.universitario.domain.Aluno;
 import br.com.cadastro.universitario.dtos.commands.AlunoInsertCommand;
+import br.com.cadastro.universitario.dtos.models.AlunoItemModel;
 import br.com.cadastro.universitario.dtos.models.AlunoListModel;
 import br.com.cadastro.universitario.service.AlunoService;
 
@@ -34,11 +35,13 @@ public class AlunoController {
 	}
 
 	@GetMapping()
-	public ResponseEntity<?> listarAlunos(AlunoListModel model) {
+	public ResponseEntity<?> listarAlunos() {
 
-		List<Aluno> alunos = alunoService.listar(model);
+		List<Aluno> alunos = alunoService.listar();
 
-		return ResponseEntity.ok(alunos);
+		List<AlunoListModel> model = AlunoListModel.ofList(alunos);
+
+		return ResponseEntity.ok(model);
 	}
 
 	@GetMapping("/{id}")
@@ -46,8 +49,9 @@ public class AlunoController {
 
 		Aluno aluno = alunoService.consultar(id);
 
-		// AlunoItemModel model = new AlunoItemModel(aluno);
+		AlunoItemModel model = new AlunoItemModel().of(aluno);
 
-		return ResponseEntity.ok(aluno);
+		return ResponseEntity.ok(model);
 	}
+
 }

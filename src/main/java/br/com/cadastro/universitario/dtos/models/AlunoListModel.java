@@ -34,4 +34,5 @@ public class AlunoListModel {
 
 		return alunos.stream().map(aluno -> of(aluno)).collect(Collectors.toList());
 	}
+
 }

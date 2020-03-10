@@ -10,7 +10,7 @@ public class AlunoItemModel {
 
 	private String email;
 
-	public static AlunoItemModel of(Aluno aluno) {
+	public AlunoItemModel of(Aluno aluno) {
 
 		AlunoItemModel model = new AlunoItemModel();
 
@@ -19,4 +19,5 @@ public class AlunoItemModel {
 
 		return model;
 	}
+
 }

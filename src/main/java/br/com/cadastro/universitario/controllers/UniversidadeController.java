@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.cadastro.universitario.domain.Universidade;
 import br.com.cadastro.universitario.dtos.commands.UniversidadeInsertCommand;
+import br.com.cadastro.universitario.dtos.models.UniversidadeListModel;
 import br.com.cadastro.universitario.service.UniversidadeService;
 
 @RestController
@@ -38,7 +39,9 @@ public class UniversidadeController {
 
 		List<Universidade> universidade = universidadeService.listar();
 
-		return ResponseEntity.ok(universidade);
+		List<UniversidadeListModel> model = UniversidadeListModel.oflist(universidade);
+
+		return ResponseEntity.ok(model);
 	}
 
 	@DeleteMapping("/{id}")

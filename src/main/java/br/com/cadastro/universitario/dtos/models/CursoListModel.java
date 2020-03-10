@@ -34,4 +34,5 @@ public class CursoListModel {
 
 		return cursos.stream().map(curso -> of(curso)).collect(Collectors.toList());
 	}
+
 }

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import br.com.cadastro.universitario.domain.Curso;
 import br.com.cadastro.universitario.dtos.commands.CursoInsertCommand;
-import br.com.cadastro.universitario.dtos.models.CursoListModel;
 import br.com.cadastro.universitario.repositories.CursoRepository;
 
 @Service
@@ -23,7 +22,7 @@ public class CursoService {
 		return cursoRepositpory.save(curso);
 	}
 
-	public List<Curso> listar(CursoListModel model) {
+	public List<Curso> listar() {
 
 		return cursoRepositpory.findAll();
 	}
@@ -39,4 +38,5 @@ public class CursoService {
 
 		cursoRepositpory.delete(curso);
 	}
+
 }

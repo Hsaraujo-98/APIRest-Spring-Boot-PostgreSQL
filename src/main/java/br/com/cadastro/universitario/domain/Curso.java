@@ -37,4 +37,5 @@ public class Curso {
 
 		return new Curso(command);
 	}
+
 }
