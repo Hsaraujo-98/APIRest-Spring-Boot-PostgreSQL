@@ -10,7 +10,7 @@ public class CadastroUniversitarioApplication {
 		SpringApplication.run(CadastroUniversitarioApplication.class, args);
 
 		System.out.println();
-		System.out.println("Spring Boot Rodando!!!");
+		System.out.println("Spring Boot Rodando!!");
 		System.out.println();
 	}
 
